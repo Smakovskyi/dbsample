@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Bus-Models</title>
+</head>
+<body>
+  <table class="w-100">
+  <tr>
+    <th th:text="#{bus-model.id}"></th>
+    <th th:text="#{bus-model.manufacturer}"></th>
+    <th th:text="#{bus-model.model}"></th>
+    <th th:text="#{bus-model.seats-number}"/>
+  </tr>
+  <th:block th:each="row : ${result}">
+    <tr>
+      <td th:text="${row.id}">index</td>
+      <td th:text="${row.manufacturer}"></td>
+      <td th:text="${row.model}"></td>
+      <td th:text="${row.seatNumber}"></td>
+    </tr>
+  </th:block>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Bus-Models</title>
+</head>
+<body>
+  <form method="GET" action="./buses">
+    <input type="text" name="registration">
+    <input type="submit" title="Find">
+  </form>
+  <br>
+  <table class="w-100">
+  <tr>
+    <th th:text="#{bus-model.id}"></th>
+    <th th:text="#{bus-model.manufacturer}"></th>
+    <th th:text="#{bus-model.model}"></th>
+    <th th:text="#{bus-model.seats-number}"/>
+  </tr>
+  <th:block th:each="row : ${result}">
+    <tr>
+      <td th:text="${row.id}">index</td>
+      <td th:text="${row.busModel.manufacturer}"></td>
+      <td th:text="${row.busModel.model}"></td>
+      <td th:text="${row.registration}"></td>
+    </tr>
+  </th:block>
+  </table>
+
+</body>
+</html>
